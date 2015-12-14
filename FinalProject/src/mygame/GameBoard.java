@@ -4,36 +4,19 @@
  */
 package mygame;
 
-import com.jme3.app.SimpleApplication;
-import com.jme3.asset.AssetManager;
-import com.jme3.material.Material;
+import com.jme3.math.Vector3f;
 import com.jme3.scene.Spatial;
 
 /**
  *
  * @author Adam
  */
-public class GameBoard extends SimpleApplication{
-    Material mat;
+public class GameBoard{
     Spatial board;
     
-    public void setMaterial(String fileLocation) {
-        mat = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
-        //mat.setTexture("ColorMap", assetManager.loadTexture(fileLocation)); // with Unshaded.j3md
+    /**sets the location of the board.
+    */
+    public void setBoard() {
+        board.setLocalTranslation( new Vector3f( 0.0f, 0.0f, 0.0f ) );
     }
-
-    public Spatial makeBoard(String modelLocation) {
-
-        
-        setMaterial("test");
-        board.setMaterial(mat);
-        return board;
-    }
-
-    @Override
-    public void simpleInitApp() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
 }

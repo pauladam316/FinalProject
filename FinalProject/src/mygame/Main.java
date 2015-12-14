@@ -1,6 +1,8 @@
 package mygame;
 
 import com.jme3.app.SimpleApplication;
+import com.jme3.math.Quaternion;
+import com.jme3.math.Vector3f;
 import com.jme3.renderer.RenderManager;
 
 
@@ -12,7 +14,9 @@ public class Main extends SimpleApplication {
     
     Player mainPlayer = new Player();
     GameBoard mainBoard = new GameBoard();
-    String boardPath = "Models/board.scene"; //this is a change
+    
+    static String boardPath = "Models/board.scene";
+    static String playerPath = "Models/marble.scene";
     
     public static void main(String[] args) {
         Main app = new Main();
@@ -21,13 +25,26 @@ public class Main extends SimpleApplication {
 
     @Override
     public void simpleInitApp() {
-        try{
+        try{ // init models
             mainBoard.board = assetManager.loadModel(boardPath);
-            rootNode.attachChild( mainBoard.board);
+            mainPlayer.player = assetManager.loadModel(playerPath);
         }
         catch (com.jme3.asset.AssetNotFoundException e){
-            System.out.println("The model: " + boardPath + " could not be found");
-        } 
+            //System.out.println("The model: " + boardPath + " could not be found");
+        }
+        //add models to root node
+        rootNode.attachChild( mainBoard.board);
+        rootNode.attachChild( mainPlayer.player);
+        
+        //Setup the models
+        mainBoard.setBoard();
+        mainPlayer.setPlayer();
+        
+        //initiate the camera position
+        flyCam.setEnabled(false);
+        cam.setLocation(new Vector3f( 0.0f, 2.0f, 0.0f ));
+        Quaternion q = new Quaternion();
+        cam.setRotation(q.fromAngles(1.5708f, 0f, 0f)); //radians, not degrees :(
     }
 
     @Override

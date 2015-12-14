@@ -1,16 +1,16 @@
-<scene exported_by="Adam" formatVersion="1.0.1" export_time="1450116808.265193" previous_export_time="1450116584.993601" >
+<scene exported_by="Adam" formatVersion="1.0.1" export_time="1450116721.132233" previous_export_time="1450116646.363717" >
   <nodes >
-    <node name="polySurface51_Untitled" >
+    <node name="Sphere" >
       <position x="0.000000" y="0.000000" z="-0.000000" />
-      <rotation qz="-0.000000" qx="0.707107" qy="0.000000" qw="0.707107" />
-      <scale x="1.000000" y="1.000000" z="1.000000" />
-      <user_data name="muproperties" value='&lt;bpy id prop: owner="OBpolySurface51_Untitled", name="muproperties", address=0x000000000B33FF08&gt;' type="IDPropertyGroup" />
-      <user_data name="kspbproperties" value='&lt;bpy id prop: owner="OBpolySurface51_Untitled", name="kspbproperties", address=0x000000000B33FC38&gt;' type="IDPropertyGroup" />
+      <rotation qz="-0.000000" qx="0.000000" qy="0.000000" qw="1.000000" />
+      <scale x="0.030000" y="0.030000" z="0.030000" />
+      <user_data name="muproperties" value='&lt;bpy id prop: owner="OBSphere", name="muproperties", address=0x000000000E678698&gt;' type="IDPropertyGroup" />
+      <user_data name="kspbproperties" value='&lt;bpy id prop: owner="OBSphere", name="kspbproperties", address=0x000000000E678188&gt;' type="IDPropertyGroup" />
       <game >
         <sensors />
         <actuators />
       </game>
-      <entity friction_z="1.0" ghost="False" friction_x="1.0" friction_y="1.0" physics_type="STATIC" mass="1.0" lock_rot_z="False" name="polySurface51_Untitled" actor="False" velocity_max="0.0" lock_trans_x="False" lock_trans_y="False" lock_trans_z="False" damping_rot="0.10000000149011612" damping_trans="0.03999999910593033" meshFile="polySurface51_Untitled.mesh" velocity_min="0.0" lock_rot_y="False" anisotropic_friction="False" lock_rot_x="False" mass_radius="1.0" inertia_tensor="0.4000000059604645" />
+      <entity friction_z="1.0" ghost="False" friction_x="1.0" friction_y="1.0" physics_type="STATIC" mass="1.0" lock_rot_z="False" name="Sphere" actor="False" velocity_max="0.0" lock_trans_x="False" lock_trans_y="False" lock_trans_z="False" damping_rot="0.10000000149011612" damping_trans="0.03999999910593033" meshFile="Sphere.mesh" velocity_min="0.0" lock_rot_y="False" anisotropic_friction="False" lock_rot_x="False" mass_radius="1.0" inertia_tensor="0.4000000059604645" />
     </node>
     <node name="Lamp" >
       <position x="4.076245" y="5.903862" z="-1.005454" />
@@ -43,7 +43,7 @@
   </nodes>
   <externals >
     <item type="material" >
-      <file name="C:\FinalProject\FinalProject\assets\Models\Wood.material" />
+      <file name="C:\FinalProject\FinalProject\assets\Models\Marble.material" />
     </item>
   </externals>
   <environment >

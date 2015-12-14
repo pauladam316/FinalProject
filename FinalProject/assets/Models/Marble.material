@@ -1,16 +1,16 @@
-// Material.001 genrated by blender2ogre 0.5.8
+// Marble genrated by blender2ogre 0.5.8
 
-material Material.001 
+material Marble 
 {
     receive_shadows on 
 
     technique
     {
-        pass Material.001
+        pass Marble
         {
-            ambient 0.800000011920929 0.800000011920929 0.800000011920929 1.0
-            diffuse 0.6400000190734865 0.6400000190734865 0.6400000190734865 1.0
-            specular 0.01833333447575569 0.01833333447575569 0.01833333447575569 1.0 12.5
+            ambient 0.15743407607078552 0.15743407607078552 0.15743407607078552 1.0
+            diffuse 0.12594726273338885 0.12594726273338885 0.12594726273338885 1.0
+            specular 1.0 1.0 1.0 1.0 12.5
             emissive 0.0 0.0 0.0 1.0
 
             alpha_to_coverage off
@@ -30,13 +30,6 @@ material Material.001
             shading gouraud
             transparent_sorting on
 
-            texture_unit 
-            {
-                texture Wood.jpg
-                tex_address_mode wrap
-                scale 1.0 1.0
-                colour_op modulate
-            }
         }
     }
 }
