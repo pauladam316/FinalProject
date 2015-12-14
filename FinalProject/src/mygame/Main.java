@@ -12,6 +12,7 @@ public class Main extends SimpleApplication {
     
     Player mainPlayer = new Player();
     GameBoard mainBoard = new GameBoard();
+    String boardPath = "Models/board.scene";
     
     public static void main(String[] args) {
         Main app = new Main();
@@ -21,11 +22,11 @@ public class Main extends SimpleApplication {
     @Override
     public void simpleInitApp() {
         try{
-            mainBoard.board = assetManager.loadModel("Models/board.scene");
+            mainBoard.board = assetManager.loadModel(boardPath);
             rootNode.attachChild( mainBoard.board);
         }
         catch (com.jme3.asset.AssetNotFoundException e){
-            System.out.println("The Model Could not be found");
+            System.out.println("The model: " + boardPath + " could not be found");
         } 
     }
 

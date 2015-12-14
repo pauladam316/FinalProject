@@ -20830,7 +20830,7 @@
         </vertexbuffer>
     </sharedgeometry>
     <submeshes>
-        <submesh usesharedvertices="true" use32bitindexes="False" operationtype="triangle_list" material="lambert3">
+        <submesh usesharedvertices="true" use32bitindexes="False" operationtype="triangle_list" material="Material.001">
             <faces count="4402">
                 <face v1="0" v2="1" v3="2"/>
                 <face v1="0" v2="2" v3="3"/>
@@ -25238,7 +25238,7 @@
         </submesh>
     </submeshes>
     <submeshnames>
-        <submesh name="lambert3" index="0">
+        <submesh name="Material.001" index="0">
         </submesh>
     </submeshnames>
 </mesh>

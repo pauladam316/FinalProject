@@ -1,9 +1,11 @@
-<scene formatVersion="1.0.1" exported_by="Adam" export_time="1450100566.836074" previous_export_time="0" >
+<scene formatVersion="1.0.1" exported_by="Adam" export_time="1450101396.903795" previous_export_time="1450101152.692971" >
   <nodes >
     <node name="polySurface51_Untitled" >
       <position z="-0.000000" y="0.000000" x="0.000000" />
       <rotation qy="0.000000" qx="0.707107" qz="-0.000000" qw="0.707107" />
       <scale z="1.000000" y="1.000000" x="1.000000" />
+      <user_data name="muproperties" value='&lt;bpy id prop: owner="OBpolySurface51_Untitled", name="muproperties", address=0x000000000B12C7A8&gt;' type="IDPropertyGroup" />
+      <user_data name="kspbproperties" value='&lt;bpy id prop: owner="OBpolySurface51_Untitled", name="kspbproperties", address=0x000000000B12BFC8&gt;' type="IDPropertyGroup" />
       <game >
         <sensors />
         <actuators />
@@ -41,7 +43,7 @@
   </nodes>
   <externals >
     <item type="material" >
-      <file name="C:\FinalProject\FinalProject\assets\Models\lambert3.material" />
+      <file name="C:\FinalProject\FinalProject\assets\Models\Material.001.material" />
     </item>
   </externals>
   <environment >
