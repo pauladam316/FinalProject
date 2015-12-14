@@ -12,7 +12,7 @@ public class Main extends SimpleApplication {
     
     Player mainPlayer = new Player();
     GameBoard mainBoard = new GameBoard();
-    String boardPath = "Models/board.scene";
+    String boardPath = "Models/board.scene"; //this is a change
     
     public static void main(String[] args) {
         Main app = new Main();
