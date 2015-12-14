@@ -21,11 +21,11 @@ public class Main extends SimpleApplication {
     @Override
     public void simpleInitApp() {
         try{
-            mainBoard.board = assetManager.loadModel("Models/Cube.mesh.xml");
+            mainBoard.board = assetManager.loadModel("Models/board.scene");
             rootNode.attachChild( mainBoard.board);
         }
         catch (com.jme3.asset.AssetNotFoundException e){
-            System.out.println("The Model: Could not be found");
+            System.out.println("The Model Could not be found");
         } 
     }
 
