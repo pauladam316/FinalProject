@@ -1,6 +1,7 @@
 package mygame;
 
 import com.jme3.app.SimpleApplication;
+import com.jme3.bullet.BulletAppState;
 import com.jme3.math.Quaternion;
 import com.jme3.math.Vector3f;
 import com.jme3.renderer.RenderManager;
@@ -12,11 +13,13 @@ import com.jme3.renderer.RenderManager;
  */
 public class Main extends SimpleApplication {
     
+    private BulletAppState bulletAppState;
+    
     Player mainPlayer = new Player();
     GameBoard mainBoard = new GameBoard();
     
-    static String boardPath = "Models/board.scene";
-    static String playerPath = "Models/marble.scene";
+    static String boardPath = "Models/board.j3o";
+    static String playerPath = "Models/marble.j3o";
     
     public static void main(String[] args) {
         Main app = new Main();
@@ -25,6 +28,10 @@ public class Main extends SimpleApplication {
 
     @Override
     public void simpleInitApp() {
+        //init physics
+        bulletAppState = new BulletAppState();
+        stateManager.attach(bulletAppState);
+        
         try{ // init models
             mainBoard.board = assetManager.loadModel(boardPath);
             mainPlayer.player = assetManager.loadModel(playerPath);
@@ -40,6 +47,13 @@ public class Main extends SimpleApplication {
         mainBoard.setBoard();
         mainPlayer.setPlayer();
         
+        //setup model physics
+        //PLAYER
+        bulletAppState.getPhysicsSpace().add(mainPlayer.playerPhy);
+        mainPlayer.playerPhy.setGravity(new Vector3f(0.0f, -0.4f, 0.0f)); 
+        //BOARD
+        bulletAppState.getPhysicsSpace().add(mainBoard.boardPhy);
+        
         //initiate the camera position
         flyCam.setEnabled(false);
         cam.setLocation(new Vector3f( 0.0f, 2.0f, 0.0f ));
@@ -49,7 +63,7 @@ public class Main extends SimpleApplication {
 
     @Override
     public void simpleUpdate(float tpf) {
-        //TODO: add update code
+        System.out.println(mainPlayer.player.getLocalTranslation());
     }
 
     @Override
