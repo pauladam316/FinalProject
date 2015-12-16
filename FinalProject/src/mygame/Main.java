@@ -51,7 +51,7 @@ public class Main extends SimpleApplication {
         //setup model physics
         //PLAYER
         bulletAppState.getPhysicsSpace().add(mainPlayer.playerPhy);
-        mainPlayer.playerPhy.setGravity(new Vector3f(0.0f, -0.4f, 0.0f)); 
+        mainPlayer.playerPhy.setGravity(new Vector3f(0.0f, -1f, 0.0f)); 
         //BOARD
         bulletAppState.getPhysicsSpace().add(mainBoard.boardPhy);
         
@@ -76,6 +76,5 @@ public class Main extends SimpleApplication {
     @Override
     public void simpleRender(RenderManager rm) {
         //TODO: add render code
-    }
-    
+    }   
 }

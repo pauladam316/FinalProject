@@ -4,6 +4,8 @@
  */
 package mygame;
 
+import com.jme3.bullet.collision.shapes.GImpactCollisionShape;
+import com.jme3.bullet.collision.shapes.HullCollisionShape;
 import com.jme3.bullet.collision.shapes.MeshCollisionShape;
 import com.jme3.bullet.control.RigidBodyControl;
 import com.jme3.math.Quaternion;
@@ -27,8 +29,13 @@ public class GameBoard{
         board.setLocalTranslation( new Vector3f( 0, 0, 0 ) );
         Quaternion q = new Quaternion();
         board.setLocalRotation( q.fromAngles((float)Math.PI/2, 0f, 0f));
-        
-        updateCollider();
+
+        MeshCollisionShape boardShape = new MeshCollisionShape (((Geometry)((Node)board).getChild("Wood")).getMesh());
+        boardPhy = new RigidBodyControl(boardShape, 0);
+        boardPhy.setKinematic(true);
+        //boardPhy.setCcdMotionThreshold(0.001f);
+        //boardPhy.setCcdSweptSphereRadius(1);
+        board.addControl(boardPhy);
     }
     public void updateRotation(Vector2f mousePos, Vector2f screenSize) {
         Vector2f rotAngle = new Vector2f();   
@@ -56,12 +63,6 @@ public class GameBoard{
         Quaternion q = new Quaternion();
         board.setLocalRotation( q.fromAngles((float)Math.PI/2 + -rotAngle.y , 0f, -rotAngle.x));
         
-        updateCollider();
     }
     
-    public void updateCollider() {
-        MeshCollisionShape   boardShape = new MeshCollisionShape  (((Geometry)((Node)board).getChild("Wood")).getMesh());
-        boardPhy = new RigidBodyControl(boardShape, 0);
-        board.addControl(boardPhy);
-    }
 }
