@@ -4,12 +4,10 @@
  */
 package mygame;
 
-import com.jme3.bullet.collision.shapes.CollisionShape;
-import com.jme3.bullet.collision.shapes.HullCollisionShape;
 import com.jme3.bullet.collision.shapes.MeshCollisionShape;
 import com.jme3.bullet.control.RigidBodyControl;
-import com.jme3.bullet.util.CollisionShapeFactory;
 import com.jme3.math.Quaternion;
+import com.jme3.math.Vector2f;
 import com.jme3.math.Vector3f;
 import com.jme3.scene.Geometry;
 import com.jme3.scene.Node;
@@ -28,8 +26,40 @@ public class GameBoard{
     public void setBoard() {
         board.setLocalTranslation( new Vector3f( 0, 0, 0 ) );
         Quaternion q = new Quaternion();
-        board.setLocalRotation( q.fromAngles(1.5708f, 0f, 0f) );
+        board.setLocalRotation( q.fromAngles((float)Math.PI/2, 0f, 0f));
         
+        updateCollider();
+    }
+    public void updateRotation(Vector2f mousePos, Vector2f screenSize) {
+        Vector2f rotAngle = new Vector2f();   
+        
+        float [] [] oldRange = new float [2] [2]; //range of numbers in screenPos
+        oldRange[0][0] = 1; //range of numbers from 1 to middle of screen in pixels
+        oldRange[0][1] = screenSize.x/2;
+
+        oldRange[1][0] = 1; //range of numbers from 1 to middle of screen in pixels
+        oldRange[1][1] = screenSize.y/2;
+        
+        float [] [] newRange = new float [2] [2]; //range of numbers in angles
+        newRange[0][0] = 0;
+        newRange[0][1] = 45; //max rotation angle of the board.
+        
+        newRange[1][0] = 0;
+        newRange[1][1] = 45; //max rotation angle of the board.
+        
+        rotAngle.x = (((mousePos.x - oldRange[0][0]) * (newRange[0][0] - newRange[0][1])) / (oldRange[0][1] - oldRange[0][0])) + newRange[0][1];   
+        rotAngle.x = (float) Math.toRadians(rotAngle.x);
+        
+        rotAngle.y = (((mousePos.y - oldRange[1][0]) * (newRange[1][0] - newRange[1][1])) / (oldRange[1][1] - oldRange[1][0])) + newRange[1][1];   
+        rotAngle.y = (float) Math.toRadians(rotAngle.y);
+        
+        Quaternion q = new Quaternion();
+        board.setLocalRotation( q.fromAngles((float)Math.PI/2 + -rotAngle.y , 0f, -rotAngle.x));
+        
+        updateCollider();
+    }
+    
+    public void updateCollider() {
         MeshCollisionShape   boardShape = new MeshCollisionShape  (((Geometry)((Node)board).getChild("Wood")).getMesh());
         boardPhy = new RigidBodyControl(boardShape, 0);
         board.addControl(boardPhy);

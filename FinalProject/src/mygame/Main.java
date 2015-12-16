@@ -3,6 +3,7 @@ package mygame;
 import com.jme3.app.SimpleApplication;
 import com.jme3.bullet.BulletAppState;
 import com.jme3.math.Quaternion;
+import com.jme3.math.Vector2f;
 import com.jme3.math.Vector3f;
 import com.jme3.renderer.RenderManager;
 
@@ -58,16 +59,23 @@ public class Main extends SimpleApplication {
         flyCam.setEnabled(false);
         cam.setLocation(new Vector3f( 0.0f, 2.0f, 0.0f ));
         Quaternion q = new Quaternion();
-        cam.setRotation(q.fromAngles(1.5708f, 0f, 0f)); //radians, not degrees :(
+        cam.setRotation(q.fromAngles((float)Math.PI/2, 0f, 0f)); //radians, not degrees :(
     }
 
     @Override
     public void simpleUpdate(float tpf) {
-        System.out.println(mainPlayer.player.getLocalTranslation());
+        
+        Vector2f mousePos = inputManager.getCursorPosition();
+        Vector2f screenSize = new Vector2f();
+        screenSize.x = this.settings.getWidth();
+        screenSize.y = this.settings.getHeight();
+        
+        mainBoard.updateRotation(mousePos, screenSize);
     }
 
     @Override
     public void simpleRender(RenderManager rm) {
         //TODO: add render code
     }
+    
 }
