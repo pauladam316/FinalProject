@@ -2,6 +2,7 @@ package mygame;
 
 import com.jme3.app.SimpleApplication;
 import com.jme3.bullet.BulletAppState;
+import com.jme3.material.Material;
 import com.jme3.math.Quaternion;
 import com.jme3.math.Vector2f;
 import com.jme3.math.Vector3f;
@@ -19,7 +20,6 @@ public class Main extends SimpleApplication {
     Player mainPlayer = new Player();
     GameBoard mainBoard = new GameBoard();
     
-    static String boardPath = "Models/board.j3o";
     static String playerPath = "Models/marble.j3o";
     
     public static void main(String[] args) {
@@ -34,19 +34,21 @@ public class Main extends SimpleApplication {
         stateManager.attach(bulletAppState);
         
         try{ // init models
-            mainBoard.board = assetManager.loadModel(boardPath);
             mainPlayer.player = assetManager.loadModel(playerPath);
         }
         catch (com.jme3.asset.AssetNotFoundException e){
             //System.out.println("The model: " + boardPath + " could not be found");
         }
-        //add models to root node
-        rootNode.attachChild( mainBoard.board);
-        rootNode.attachChild( mainPlayer.player);
+        //init materials
+        mainBoard.mat = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");  // create a simple material
         
         //Setup the models
         mainBoard.setBoard();
         mainPlayer.setPlayer();
+        
+        //add models to root node
+        rootNode.attachChild( mainBoard.board);
+        rootNode.attachChild( mainPlayer.player);
         
         //setup model physics
         //PLAYER
@@ -57,7 +59,7 @@ public class Main extends SimpleApplication {
         
         //initiate the camera position
         flyCam.setEnabled(false);
-        cam.setLocation(new Vector3f( 0.0f, 2.0f, 0.0f ));
+        cam.setLocation(new Vector3f( 0.0f, 6.0f, 0.0f ));
         Quaternion q = new Quaternion();
         cam.setRotation(q.fromAngles((float)Math.PI/2, 0f, 0f)); //radians, not degrees :(
     }

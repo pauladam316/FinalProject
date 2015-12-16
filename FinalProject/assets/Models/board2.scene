@@ -1,0 +1,126 @@
+<scene previous_export_time="0" exported_by="Adam" export_time="1450274724.564864" formatVersion="1.0.1" >
+  <nodes >
+    <node name="pCube3" >
+      <position y="0.000000" x="7.500000" z="-0.000000" />
+      <rotation qy="0.000000" qx="-0.000000" qz="-0.000000" qw="1.000000" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <user_data type="IDPropertyGroup" name="muproperties" value='&lt;bpy id prop: owner="OBpCube3", name="muproperties", address=0x000000000997CF38&gt;' />
+      <user_data type="IDPropertyGroup" name="kspbproperties" value='&lt;bpy id prop: owner="OBpCube3", name="kspbproperties", address=0x000000000997D0E8&gt;' />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <entity name="Untitled.001" actor="False" velocity_min="0.0" friction_y="1.0" friction_x="1.0" friction_z="1.0" lock_trans_z="False" lock_trans_y="False" lock_trans_x="False" lock_rot_z="False" damping_rot="0.10000000149011612" mass="1.0" inertia_tensor="0.4000000059604645" anisotropic_friction="False" meshFile="Untitled.001.mesh" mass_radius="1.0" damping_trans="0.03999999910593033" velocity_max="0.0" ghost="False" lock_rot_x="False" lock_rot_y="False" physics_type="STATIC" />
+    </node>
+    <node name="pCube4" >
+      <position y="0.000000" x="12.000000" z="-5.500000" />
+      <rotation qy="0.000000" qx="-0.000000" qz="-0.000000" qw="1.000000" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <user_data type="IDPropertyGroup" name="muproperties" value='&lt;bpy id prop: owner="OBpCube4", name="muproperties", address=0x00000000098299B8&gt;' />
+      <user_data type="IDPropertyGroup" name="kspbproperties" value='&lt;bpy id prop: owner="OBpCube4", name="kspbproperties", address=0x0000000009829658&gt;' />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <entity name="Untitled.006" actor="False" velocity_min="0.0" friction_y="1.0" friction_x="1.0" friction_z="1.0" lock_trans_z="False" lock_trans_y="False" lock_trans_x="False" lock_rot_z="False" damping_rot="0.10000000149011612" mass="1.0" inertia_tensor="0.4000000059604645" anisotropic_friction="False" meshFile="Untitled.006.mesh" mass_radius="1.0" damping_trans="0.03999999910593033" velocity_max="0.0" ghost="False" lock_rot_x="False" lock_rot_y="False" physics_type="STATIC" />
+    </node>
+    <node name="pCube1" >
+      <position y="0.000000" x="0.000000" z="-0.000000" />
+      <rotation qy="0.000000" qx="-0.000000" qz="-0.000000" qw="1.000000" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <user_data type="IDPropertyGroup" name="muproperties" value='&lt;bpy id prop: owner="OBpCube1", name="muproperties", address=0x00000000098290B8&gt;' />
+      <user_data type="IDPropertyGroup" name="kspbproperties" value='&lt;bpy id prop: owner="OBpCube1", name="kspbproperties", address=0x0000000009829898&gt;' />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <entity name="Untitled" actor="False" velocity_min="0.0" friction_y="1.0" friction_x="1.0" friction_z="1.0" lock_trans_z="False" lock_trans_y="False" lock_trans_x="False" lock_rot_z="False" damping_rot="0.10000000149011612" mass="1.0" inertia_tensor="0.4000000059604645" anisotropic_friction="False" meshFile="Untitled.mesh" mass_radius="1.0" damping_trans="0.03999999910593033" velocity_max="0.0" ghost="False" lock_rot_x="False" lock_rot_y="False" physics_type="STATIC" />
+    </node>
+    <node name="pCube5" >
+      <position y="0.000000" x="16.500000" z="-11.000000" />
+      <rotation qy="0.000000" qx="-0.000000" qz="-0.000000" qw="1.000000" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <user_data type="IDPropertyGroup" name="muproperties" value='&lt;bpy id prop: owner="OBpCube5", name="muproperties", address=0x000000000997DE18&gt;' />
+      <user_data type="IDPropertyGroup" name="kspbproperties" value='&lt;bpy id prop: owner="OBpCube5", name="kspbproperties", address=0x000000000997E298&gt;' />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <entity name="Untitled.005" actor="False" velocity_min="0.0" friction_y="1.0" friction_x="1.0" friction_z="1.0" lock_trans_z="False" lock_trans_y="False" lock_trans_x="False" lock_rot_z="False" damping_rot="0.10000000149011612" mass="1.0" inertia_tensor="0.4000000059604645" anisotropic_friction="False" meshFile="Untitled.005.mesh" mass_radius="1.0" damping_trans="0.03999999910593033" velocity_max="0.0" ghost="False" lock_rot_x="False" lock_rot_y="False" physics_type="STATIC" />
+    </node>
+    <node name="pCube7" >
+      <position y="0.000000" x="25.500000" z="-0.000000" />
+      <rotation qy="0.000000" qx="-0.000000" qz="-0.000000" qw="1.000000" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <user_data type="IDPropertyGroup" name="muproperties" value='&lt;bpy id prop: owner="OBpCube7", name="muproperties", address=0x0000000009829418&gt;' />
+      <user_data type="IDPropertyGroup" name="kspbproperties" value='&lt;bpy id prop: owner="OBpCube7", name="kspbproperties", address=0x000000000997D058&gt;' />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <entity name="Untitled.003" actor="False" velocity_min="0.0" friction_y="1.0" friction_x="1.0" friction_z="1.0" lock_trans_z="False" lock_trans_y="False" lock_trans_x="False" lock_rot_z="False" damping_rot="0.10000000149011612" mass="1.0" inertia_tensor="0.4000000059604645" anisotropic_friction="False" meshFile="Untitled.003.mesh" mass_radius="1.0" damping_trans="0.03999999910593033" velocity_max="0.0" ghost="False" lock_rot_x="False" lock_rot_y="False" physics_type="STATIC" />
+    </node>
+    <node name="pCube6" >
+      <position y="0.000000" x="33.000000" z="-0.000000" />
+      <rotation qy="0.000000" qx="-0.000000" qz="-0.000000" qw="1.000000" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <user_data type="IDPropertyGroup" name="muproperties" value='&lt;bpy id prop: owner="OBpCube6", name="muproperties", address=0x000000000997D448&gt;' />
+      <user_data type="IDPropertyGroup" name="kspbproperties" value='&lt;bpy id prop: owner="OBpCube6", name="kspbproperties", address=0x00000000098295C8&gt;' />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <entity name="Untitled.002" actor="False" velocity_min="0.0" friction_y="1.0" friction_x="1.0" friction_z="1.0" lock_trans_z="False" lock_trans_y="False" lock_trans_x="False" lock_rot_z="False" damping_rot="0.10000000149011612" mass="1.0" inertia_tensor="0.4000000059604645" anisotropic_friction="False" meshFile="Untitled.002.mesh" mass_radius="1.0" damping_trans="0.03999999910593033" velocity_max="0.0" ghost="False" lock_rot_x="False" lock_rot_y="False" physics_type="STATIC" />
+    </node>
+    <node name="pCube8" >
+      <position y="0.000000" x="21.000000" z="-5.500000" />
+      <rotation qy="0.000000" qx="-0.000000" qz="-0.000000" qw="1.000000" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <user_data type="IDPropertyGroup" name="muproperties" value='&lt;bpy id prop: owner="OBpCube8", name="muproperties", address=0x000000000997DAB8&gt;' />
+      <user_data type="IDPropertyGroup" name="kspbproperties" value='&lt;bpy id prop: owner="OBpCube8", name="kspbproperties", address=0x000000000997D5A8&gt;' />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <entity name="Untitled.004" actor="False" velocity_min="0.0" friction_y="1.0" friction_x="1.0" friction_z="1.0" lock_trans_z="False" lock_trans_y="False" lock_trans_x="False" lock_rot_z="False" damping_rot="0.10000000149011612" mass="1.0" inertia_tensor="0.4000000059604645" anisotropic_friction="False" meshFile="Untitled.004.mesh" mass_radius="1.0" damping_trans="0.03999999910593033" velocity_max="0.0" ghost="False" lock_rot_x="False" lock_rot_y="False" physics_type="STATIC" />
+    </node>
+    <node name="Lamp" >
+      <position y="5.903862" x="4.076245" z="-1.005454" />
+      <rotation qy="0.755880" qx="0.169076" qz="-0.272171" qw="0.570947" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <light type="point" powerScale="1.0" shadow="true" name="Lamp" >
+        <position y="5.903862" x="4.076245" z="-1.005454" />
+        <lightAttenuation range="5000" constant="1.0" linear="0.03333335240683057" quadratic="0.0" />
+        <colourDiffuse b="1.0" r="1.0" g="1.0" />
+        <colourSpecular b="1.0" r="1.0" g="1.0" />
+        <colourShadow b="1.0" r="1.0" g="1.0" />
+      </light>
+    </node>
+    <node name="Camera" >
+      <position y="5.343665" x="7.481132" z="6.507640" />
+      <rotation qy="0.334251" qx="0.481707" qz="-0.212922" qw="0.781600" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <camera projectionType="perspective" name="Camera" fov="0.5033799435163735" >
+        <clipping nearPlaneDist="0.10000000149011612" near="0.10000000149011612" farPlaneDist="100.0" far="100.0" />
+      </camera>
+    </node>
+  </nodes>
+  <externals >
+    <item type="material" >
+      <file name="C:\FinalProject\FinalProject\assets\Models\lambert1.material" />
+    </item>
+  </externals>
+  <environment >
+    <colourBackground b="0.05087608844041824" r="0.05087608844041824" g="0.05087608844041824" />
+    <colourAmbient b="0.0" r="0.0" g="0.0" />
+    <colourDiffuse b="0.05087608844041824" r="0.05087608844041824" g="0.05087608844041824" />
+  </environment>
+</scene>

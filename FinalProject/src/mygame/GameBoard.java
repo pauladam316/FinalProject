@@ -4,10 +4,12 @@
  */
 package mygame;
 
+import com.jme3.bullet.collision.shapes.BoxCollisionShape;
 import com.jme3.bullet.collision.shapes.GImpactCollisionShape;
 import com.jme3.bullet.collision.shapes.HullCollisionShape;
 import com.jme3.bullet.collision.shapes.MeshCollisionShape;
 import com.jme3.bullet.control.RigidBodyControl;
+import com.jme3.material.Material;
 import com.jme3.math.Quaternion;
 import com.jme3.math.Vector2f;
 import com.jme3.math.Vector3f;
@@ -20,17 +22,17 @@ import com.jme3.scene.Spatial;
  * @author Adam
  */
 public class GameBoard{
-    Spatial board;
+    Node board = new Node();
     RigidBodyControl boardPhy;
+    public Material mat;
     
     /**sets the location of the board.
     */
     public void setBoard() {
-        board.setLocalTranslation( new Vector3f( 0, 0, 0 ) );
-        Quaternion q = new Quaternion();
-        board.setLocalRotation( q.fromAngles((float)Math.PI/2, 0f, 0f));
-
-        MeshCollisionShape boardShape = new MeshCollisionShape (((Geometry)((Node)board).getChild("Wood")).getMesh());
+        Block block = new Block();
+        block.createBlock(Vector3f.ZERO, new Vector3f(1,1,1), mat);
+        board.attachChild(block.geom); 
+        BoxCollisionShape boardShape = new BoxCollisionShape( new Vector3f(1,1,1));
         boardPhy = new RigidBodyControl(boardShape, 0);
         boardPhy.setKinematic(true);
         //boardPhy.setCcdMotionThreshold(0.001f);
