@@ -20,13 +20,16 @@ public class Player {
     /**sets the location of the player.
     */
     public void setPlayer() {
-        player.setLocalTranslation( new Vector3f( 0.1f, 1f, -0.45f ) );
         
         SphereCollisionShape playerShape = new SphereCollisionShape(0.03f);	
-        playerPhy = new RigidBodyControl(playerShape, .1f);
-        //playerPhy.setAngularDamping(1);
-        //playerPhy.setCcdMotionThreshold(0.02f);
-        //playerPhy.setCcdSweptSphereRadius(.1f);
+        playerPhy = new RigidBodyControl(playerShape, 5f);
+        
         player.addControl(playerPhy);
+    }
+    public boolean isDead () {
+        if (playerPhy.getPhysicsLocation().y < -1) {
+            return true;
+        }
+        return false;
     }
 }
