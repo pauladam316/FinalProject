@@ -26,7 +26,8 @@ public class GameBoard{
     int numBlocks = 0; //keep track of how many blocks exist
     float boardWidth = 0.4f; //change this for whatever board width you want
     Vector3f blockLocation;
-    
+    float tileOffset = 0f;
+      
     /**sets the location of the board.
     */
     public void setBoard() {
@@ -54,9 +55,11 @@ public class GameBoard{
         boardShape.addChildShape(block[3].collider, block[3].geom.getLocalTranslation());
         boardShape.addChildShape(block[4].collider, block[4].geom.getLocalTranslation());
         boardShape.addChildShape(block[5].collider, block[5].geom.getLocalTranslation());
+        
         boardPhy = new RigidBodyControl(boardShape, 0);
         boardPhy.setKinematic(true);
         board.addControl(boardPhy);
+
     }
     /**creates a 10x10 grid of nodes for the board
     */
@@ -108,7 +111,7 @@ public class GameBoard{
         block[numBlocks] = new Block(); //declare a new block
         Vector3f scale = new Vector3f(0.1f, 0.01f, 0.1f); //make a square platform
         block[numBlocks].createBlock(scale, goalMat); //create the block
-        block[numBlocks].geom.setLocalTranslation(node.position); //place it on the selected node
+        block[numBlocks].geom.setLocalTranslation(new Vector3f(node.position.x, node.position.y + 0.01f, node.position.z)); //place it on the selected node
         board.attachChild(block[numBlocks].geom);  //add geometry to the block
         numBlocks ++;
     }
@@ -121,7 +124,8 @@ public class GameBoard{
     public Vector3f findAvg(Vector3f start, Vector3f end) {
         Vector3f avg = new Vector3f();
         avg.x = (start.x + end.x) / 2;
-        avg.y = (start.y + end.y) / 2;
+        avg.y = tileOffset;
+        tileOffset -= 0.01f;
         avg.z = (start.z + end.z) / 2;
         return avg;
     }
@@ -174,5 +178,4 @@ public class GameBoard{
         board.setLocalRotation( q.fromAngles( -rotAngle.y , 0f, -rotAngle.x)); //apply the rotation
         
     }
-    
 }
