@@ -48,7 +48,7 @@ public class Main extends SimpleApplication implements PhysicsCollisionListener 
     BitmapText pointText;
     BitmapText timerText;  
     Player mainPlayer = new Player();
-    GameBoard mainBoard = new GameBoard();
+    public static GameBoard mainBoard = new GameBoard();
     GUI boardGUI = new GUI();
     AudioNode background;
     AudioNode bounceSoundEft;
@@ -214,12 +214,12 @@ public class Main extends SimpleApplication implements PhysicsCollisionListener 
                    childLayoutCenter(); // panel properties, add more...               
                     valignCenter();
                     // GUI elements
-                    control(new ButtonBuilder("SaveButton", "Save"){{
+                    control(new ButtonBuilder("LoadButton", "Load"){{
                         alignCenter();
                         valignCenter();
                         height("5%");
                         width("15%");
-                        interactOnClick("save()");
+                        interactOnClick("load()");
                     }});
 
                     //.. add more GUI elements here              
@@ -283,6 +283,46 @@ public class Main extends SimpleApplication implements PhysicsCollisionListener 
                 guiNode.detachChild(boardGUI.target);              
                 initAudio();
                 gameOver.stop();// play continuously!
+                NiftyJmeDisplay saveDisplay = new NiftyJmeDisplay(
+                assetManager, inputManager, audioRenderer, guiViewPort);
+                nifty = saveDisplay.getNifty();
+                guiViewPort.addProcessor(saveDisplay);
+                //flyCam.setDragToRotate(true);
+
+                nifty.loadStyleFile("nifty-default-styles.xml");
+                nifty.loadControlFile("nifty-default-controls.xml");
+                gui.getNifty(nifty);
+                // <screen>
+                nifty.addScreen("Screen_ID", new ScreenBuilder("Hello Nifty Screen"){{
+                    controller(gui); // Screen properties       
+                    // <layer>
+                    layer(new LayerBuilder("Layer_ID") {{
+                        childLayoutVertical(); // layer properties, add more...
+
+                        // <panel>
+                        panel(new PanelBuilder("Panel_ID") {{
+                           childLayoutCenter(); // panel properties, add more...               
+                           valignCenter();
+                            // GUI elements
+
+                            control(new ButtonBuilder("SaveButton", "Save"){{
+                                alignRight();
+                                valignTop();
+                                height("5%");
+                                width("15%");
+                                visibleToMouse(true);
+                                interactOnClick("save()");
+                            }});
+                            //.. add more GUI elements here              
+                        }});
+                        // </panel>
+
+                      }});
+                    // </layer>
+                  }}.build(nifty));
+                // </screen>
+
+               nifty.gotoScreen("Screen_ID"); // start the screen
                 doOnce = false;
                 timerText.setColor(ColorRGBA.White); 
             }

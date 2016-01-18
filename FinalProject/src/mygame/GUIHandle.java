@@ -17,6 +17,14 @@ import de.lessvoid.nifty.builder.ScreenBuilder;
 import de.lessvoid.nifty.elements.Element;
 import de.lessvoid.nifty.screen.Screen;
 import de.lessvoid.nifty.screen.ScreenController;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
  
 public class GUIHandle extends AbstractAppState implements ScreenController {
     Nifty nifty;
@@ -64,7 +72,35 @@ public class GUIHandle extends AbstractAppState implements ScreenController {
       // start the game and do some more stuff...
     }
     public void save() {
-        //ERIC PUT SAVING SHIT HERE
+        PrintWriter writer;
+        try {
+            writer = new PrintWriter("SaveData.txt", "UTF-8");
+            writer.println(Main.mainBoard.level);
+            writer.close();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(GUIHandle.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (UnsupportedEncodingException ex) {
+            Logger.getLogger(GUIHandle.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    public void load() {
+        try {
+            // FileReader reads text files in the default encoding.
+            FileReader fileReader = 
+                new FileReader("SaveData.txt");
+
+            // Always wrap FileReader in BufferedReader.
+            BufferedReader bufferedReader = 
+                new BufferedReader(fileReader);
+ 
+            Main.mainBoard.level = Integer.parseInt(bufferedReader.readLine());
+            // Always close files.
+            bufferedReader.close();         
+        }
+        catch(IOException ex) {                 
+            // Or we could just do this: 
+            // ex.printStackTrace();
+        }
     }
  
 }
