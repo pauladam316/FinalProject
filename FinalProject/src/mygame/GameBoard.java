@@ -27,7 +27,7 @@ public class GameBoard{
     float boardWidth = 0.4f; //change this for whatever board width you want
     Vector3f blockLocation;
     float tileOffset = 0f;
-      
+    int level = 1;  
     /**sets the location of the board.
     */
     public void setBoard() {
@@ -40,14 +40,25 @@ public class GameBoard{
         * 2. THE END NODE
         * START AND END NODES ARE WHERE THE GAME WILL DRAW THE BLOCK BETWEEN. THEY ARE BOARDNODES AND REFRENECE A POSITION IN THE NODEGRID
         * 0,0 IS THE BOTTOM RIGHT CORNER OF THE GRID AND 9,9 IS THE TOP LEFT
-        *//////////////////////////////////////      
-        makePlatform(nodeGrid[0][0]);
-        makeBlock(nodeGrid[0][0], nodeGrid[0][3]);
-        makeBlock(nodeGrid[0][3], nodeGrid[3][3]);
-        makeBlock(nodeGrid[3][3], nodeGrid[3][9]);
-        makeBlock(nodeGrid[3][9], nodeGrid[9][9]);
-        makePlatform(nodeGrid[9][9]);
-        
+        *//////////////////////////////////////     
+        numBlocks = 0;
+        board.detachAllChildren();
+        if (level == 1) {
+            makePlatform(nodeGrid[0][0]);
+            makeBlock(nodeGrid[0][0], nodeGrid[0][3]);
+            makeBlock(nodeGrid[0][3], nodeGrid[3][3]);
+            makeBlock(nodeGrid[3][3], nodeGrid[3][9]);
+            makeBlock(nodeGrid[3][9], nodeGrid[9][9]);
+            makePlatform(nodeGrid[9][9]);
+        }
+        if (level == 2) {
+            makePlatform(nodeGrid[0][0]);
+            makeBlock(nodeGrid[0][0], nodeGrid[0][9]);
+            makeBlock(nodeGrid[0][9], nodeGrid[4][9]);
+            makeBlock(nodeGrid[4][9], nodeGrid[4][5]);
+            makeBlock(nodeGrid[4][5], nodeGrid[9][5]);
+            makePlatform(nodeGrid[9][5]);
+        }
         CompoundCollisionShape boardShape = new CompoundCollisionShape();
         boardShape.addChildShape(block[0].collider, block[0].geom.getLocalTranslation());
         boardShape.addChildShape(block[1].collider, block[1].geom.getLocalTranslation());
@@ -111,7 +122,12 @@ public class GameBoard{
         block[numBlocks] = new Block(); //declare a new block
         Vector3f scale = new Vector3f(0.1f, 0.01f, 0.1f); //make a square platform
         block[numBlocks].createBlock(scale, goalMat); //create the block
-        block[numBlocks].geom.setLocalTranslation(new Vector3f(node.position.x, node.position.y + 0.01f, node.position.z)); //place it on the selected node
+        if (numBlocks == 0) {
+            block[numBlocks].geom.setLocalTranslation(new Vector3f(node.position.x, tileOffset + 0.01f, node.position.z)); //place it on the selected node
+        }
+        else {
+            block[numBlocks].geom.setLocalTranslation(new Vector3f(node.position.x, tileOffset + 0.02f, node.position.z)); //place it on the selected node
+        }
         board.attachChild(block[numBlocks].geom);  //add geometry to the block
         numBlocks ++;
     }
