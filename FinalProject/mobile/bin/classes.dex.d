@@ -1,0 +1,26 @@
+C:\FinalProject\FinalProject\mobile\bin\classes.dex : \
+C:\FinalProject\FinalProject\mobile\bin\classes\com\mycompany\mygame\BuildConfig.class \
+C:\FinalProject\FinalProject\mobile\bin\classes\com\mycompany\mygame\MainActivity.class \
+C:\FinalProject\FinalProject\mobile\bin\classes\com\mycompany\mygame\R$attr.class \
+C:\FinalProject\FinalProject\mobile\bin\classes\com\mycompany\mygame\R$drawable.class \
+C:\FinalProject\FinalProject\mobile\bin\classes\com\mycompany\mygame\R$layout.class \
+C:\FinalProject\FinalProject\mobile\bin\classes\com\mycompany\mygame\R$string.class \
+C:\FinalProject\FinalProject\mobile\bin\classes\com\mycompany\mygame\R.class \
+C:\FinalProject\FinalProject\mobile\bin\dexedLibs\jME3-jogg-ca4f4d5d13b3b4561c5cc42c2c3c2696.jar \
+C:\FinalProject\FinalProject\mobile\bin\dexedLibs\jME3-android-3051dbf5ed180564b4879f3b5f2b3906.jar \
+C:\FinalProject\FinalProject\mobile\bin\dexedLibs\jME3-plugins-34c9626d8ed050b820742ddf6e7865da.jar \
+C:\FinalProject\FinalProject\mobile\bin\dexedLibs\nifty-default-controls-06a8af515f426985cc52b36e9a708cbc.jar \
+C:\FinalProject\FinalProject\mobile\bin\dexedLibs\jME3-niftygui-ed3c874813b33b80f60d4cb3c8aab38c.jar \
+C:\FinalProject\FinalProject\mobile\bin\dexedLibs\jME3-core-1dd262688016090abf32e6b8e2168ccc.jar \
+C:\FinalProject\FinalProject\mobile\bin\dexedLibs\MyGame-601740fe4fef11ff47799fc042312489.jar \
+C:\FinalProject\FinalProject\mobile\bin\dexedLibs\jME3-testdata-fdd2ae216619aaeb2c8b74df8d659a0c.jar \
+C:\FinalProject\FinalProject\mobile\bin\dexedLibs\j-ogg-vorbisd-01962ab7e509393d692308828f86bebb.jar \
+C:\FinalProject\FinalProject\mobile\bin\dexedLibs\nifty-style-black-7ab70aed9cbaa6193111d7fa410284fa.jar \
+C:\FinalProject\FinalProject\mobile\bin\dexedLibs\j-ogg-oggd-83985924adc721740f7f142c19eb0505.jar \
+C:\FinalProject\FinalProject\mobile\bin\dexedLibs\eventbus-ad799dd6892c3d89447280bff23da9c2.jar \
+C:\FinalProject\FinalProject\mobile\bin\dexedLibs\jME3-bullet-7ca9f304d22b690b40c1d6b5e504d53a.jar \
+C:\FinalProject\FinalProject\mobile\bin\dexedLibs\jME3-effects-c2b358c0009cbf8aea471e43d2028e2e.jar \
+C:\FinalProject\FinalProject\mobile\bin\dexedLibs\jME3-terrain-6bb664d83372eb2851df6ca57679c272.jar \
+C:\FinalProject\FinalProject\mobile\bin\dexedLibs\xmlpull-xpp3-c0ccaab6275bf575b0b66128a5672748.jar \
+C:\FinalProject\FinalProject\mobile\bin\dexedLibs\jME3-networking-72ec43ac1bd3a19ebd2b7e1e5be0f058.jar \
+C:\FinalProject\FinalProject\mobile\bin\dexedLibs\nifty-408f9cfe5bd33e48e57d924be3a5d25b.jar \

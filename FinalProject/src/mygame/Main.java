@@ -5,8 +5,6 @@ import com.jme3.audio.AudioNode;
 import com.jme3.bullet.BulletAppState;
 import com.jme3.bullet.collision.PhysicsCollisionEvent;
 import com.jme3.bullet.collision.PhysicsCollisionListener;
-import com.jme3.effect.ParticleEmitter;
-import com.jme3.effect.ParticleMesh;
 import com.jme3.font.BitmapText;
 import com.jme3.material.Material;
 import com.jme3.math.ColorRGBA;
@@ -17,10 +15,8 @@ import com.jme3.renderer.RenderManager;
 import com.jme3.texture.Texture;
 import com.jme3.util.SkyFactory;
 import com.jme3.niftygui.NiftyJmeDisplay;
-import com.jme3.scene.Node;
 import com.jme3.scene.Spatial;
 import com.jme3.system.Timer;
-import com.jme3.ui.Picture;
 import de.lessvoid.nifty.Nifty;
 import de.lessvoid.nifty.builder.ImageBuilder;
 import de.lessvoid.nifty.builder.ScreenBuilder;
@@ -29,8 +25,8 @@ import de.lessvoid.nifty.builder.PanelBuilder;
 import de.lessvoid.nifty.controls.button.builder.ButtonBuilder;
 
 /**
- * test
- * @author normenhansen
+ * The main logic for the ball rolling game
+ * @author Adam Paul
  */
 public class Main extends SimpleApplication implements PhysicsCollisionListener {
     
@@ -59,6 +55,7 @@ public class Main extends SimpleApplication implements PhysicsCollisionListener 
     boolean isWin = false;
     boolean winTimerInit = false;
     boolean playEffect = true;
+    boolean isLoaded = false;
     
      Spatial effect;
     
@@ -268,7 +265,15 @@ public class Main extends SimpleApplication implements PhysicsCollisionListener 
         screenSize.y = this.settings.getHeight();
         
         if (gui.playing && !isReady) {
-            guiNode.attachChild(boardGUI.target);
+            guiNode.attachChild(boardGUI.target);      
+        }
+        if (!isLoaded && gui.playing) {
+            rootNode.detachChild( mainBoard.board);
+            mainBoard.setBoard();
+            rootNode.attachChild( mainBoard.board);
+            bulletAppState.getPhysicsSpace().remove(mainBoard.boardPhy);
+            bulletAppState.getPhysicsSpace().add(mainBoard.boardPhy);
+            isLoaded = true;
         }
         
         if (Math.rint(levelTime-pointsTimer.getTimeInSeconds()) == 0){
@@ -278,7 +283,7 @@ public class Main extends SimpleApplication implements PhysicsCollisionListener 
         }
         
         if (mousePos.x > screenSize.x/2 - 10 && mousePos.x < screenSize.x/2 + 10 && gui.playing == true) {
-            if (mousePos.y > screenSize.y/2 - 10 && mousePos.y < screenSize.y/2 + 10) {    
+            if (mousePos.y > screenSize.y/2 - 10 && mousePos.y < screenSize.y/2 + 10 &&  doOnce == true) {    
                 isReady = true;
                 guiNode.detachChild(boardGUI.target);              
                 initAudio();
@@ -325,6 +330,7 @@ public class Main extends SimpleApplication implements PhysicsCollisionListener 
                nifty.gotoScreen("Screen_ID"); // start the screen
                 doOnce = false;
                 timerText.setColor(ColorRGBA.White); 
+                
             }
         }
         
@@ -438,7 +444,7 @@ public class Main extends SimpleApplication implements PhysicsCollisionListener 
            
         }
         if (isWin == false) {
-            mainPlayer.playerPhy.setPhysicsLocation(mainBoard.block[5].geom.getLocalTranslation());
+            mainPlayer.playerPhy.setPhysicsLocation(new Vector3f(mainBoard.block[5].geom.getLocalTranslation().x,0.1f,mainBoard.block[5].geom.getLocalTranslation().z));
         }  
         if (Math.rint(1-pointsTimer.getTimeInSeconds()) == 0 && playEffect) {
             effect = assetManager.loadModel("Scenes/ParticleTest.j3o");
@@ -468,6 +474,8 @@ public class Main extends SimpleApplication implements PhysicsCollisionListener 
         }
     }
     public void resetBoard() {
+        mainBoard.boardWidth = 0.2f;
+        rootNode.detachChild(mainBoard.board);
         mainBoard.setBoard();
         winTimerInit = false;
         mainPlayer.playerPhy.setPhysicsLocation(new Vector3f(mainBoard.block[0].geom.getLocalTranslation().x,.3f,mainBoard.block[0].geom.getLocalTranslation().z));
@@ -475,7 +483,9 @@ public class Main extends SimpleApplication implements PhysicsCollisionListener 
         mainPlayer.playerPhy.setAngularVelocity(Vector3f.ZERO);
         isReady = false;
         guiNode.attachChild(boardGUI.target);
+        rootNode.attachChild(mainBoard.board);
         bulletAppState.getPhysicsSpace().remove(mainBoard.boardPhy);
         bulletAppState.getPhysicsSpace().add(mainBoard.boardPhy);
+        doOnce = true;      
     }
 }

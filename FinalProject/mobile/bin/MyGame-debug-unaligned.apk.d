@@ -1,0 +1,23 @@
+C:\FinalProject\FinalProject\mobile\bin\MyGame-debug-unaligned.apk : \
+C:\FinalProject\FinalProject\mobile\bin\MyGame.ap_ \
+C:\FinalProject\FinalProject\mobile\bin\classes.dex \
+C:\FinalProject\FinalProject\mobile\libs\jME3-jogg.jar \
+C:\FinalProject\FinalProject\mobile\libs\jME3-android.jar \
+C:\FinalProject\FinalProject\mobile\libs\jME3-plugins.jar \
+C:\FinalProject\FinalProject\mobile\libs\nifty-default-controls.jar \
+C:\FinalProject\FinalProject\mobile\libs\jME3-niftygui.jar \
+C:\FinalProject\FinalProject\mobile\libs\jME3-core.jar \
+C:\FinalProject\FinalProject\mobile\libs\MyGame.jar \
+C:\FinalProject\FinalProject\mobile\libs\jME3-testdata.jar \
+C:\FinalProject\FinalProject\mobile\libs\j-ogg-vorbisd.jar \
+C:\FinalProject\FinalProject\mobile\libs\nifty-style-black.jar \
+C:\FinalProject\FinalProject\mobile\libs\j-ogg-oggd.jar \
+C:\FinalProject\FinalProject\mobile\libs\eventbus.jar \
+C:\FinalProject\FinalProject\mobile\libs\jME3-bullet.jar \
+C:\FinalProject\FinalProject\mobile\libs\jME3-effects.jar \
+C:\FinalProject\FinalProject\mobile\libs\jME3-terrain.jar \
+C:\FinalProject\FinalProject\mobile\libs\xmlpull-xpp3.jar \
+C:\FinalProject\FinalProject\mobile\libs\jME3-networking.jar \
+C:\FinalProject\FinalProject\mobile\libs\nifty.jar \
+C:\FinalProject\FinalProject\mobile\libs\armeabi\libbulletjme.so \
+C:\FinalProject\FinalProject\mobile\libs\armeabi-v7a\libbulletjme.so \
